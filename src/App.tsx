@@ -36,14 +36,14 @@ function App() {
   }
 
   return (
-    // Modo noche
+    // Div modo noche
     <div className={darkMode ? "dark" : ""}>
       {/* Contenedor general */}
       <div className="flex flex-col justify-center items-center min-h-screen bg-red-100 transicion-general dark:bg-slate-800">
         {/* Contenedor juego */}
-        <div className="relative flex flex-col justify-center items-center">
-          {/* Probar modo noche */}
-          <div className="absolute flex flex-col justify-center items-center -top-20 w-full">
+        <div className="flex flex-col justify-center items-center">
+          {/* Modo noche */}
+          <div className="flex flex-col justify-center items-center w-full mb-8">
             {
               darkMode  
                 ? <p className='mb-3 font-bold text-lg transicion-general dark:custom-dark-words'>Volver al modo normal</p>
@@ -61,7 +61,9 @@ function App() {
           <div className="flex flex-col justify-center items-center w-full mt-4 space-y-6 md:space-y-0 md:flex-row md:justify-between">
             {
               answers.map(answer => (
-                <button onClick={() => handleAnswerClick(answer)} className='uppercase bg-[#46997E] text-red-100 font-bold w-full md:w-20 py-2 rounded-md hover:opacity-80 duration-200 hover:-translate-y-0.5 transition-all dark:bg-slate-400 dark:text-slate-800' key={answer}>{answer}</button>
+                <button onClick={() => handleAnswerClick(answer)} className='uppercase bg-[#46997E] w-full md:w-20 py-2 rounded-md hover:opacity-80 duration-200 hover:-translate-y-0.5 transition-all dark:bg-slate-400 ' key={answer}>
+                  <span className='text-red-100 font-bold transicion-general dark:text-slate-800'>{answer}</span>
+                </button>
               ))
             }
           </div>
